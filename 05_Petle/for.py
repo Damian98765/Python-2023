@@ -23,14 +23,16 @@ else:
     print("Koniec")
 
 # wczytaj przy użyciu input() liczbę; wypisz sumę jej cyfr
+# moje rozwizanie
 suma = 0
-liczba = input("podaj liczbę")
+liczba = input("Podaj liczbę")
 for cyfra in liczba:
     suma += int(cyfra)
-print(suma)
+print(f"Suma liczby {liczba} wynosi: {suma}.")
 
+# rozwizanie prowadzcego
 suma = 0
-liczba = int (input("podaj liczbę"))
+liczba = int(input("Podaj liczbę"))
 while liczba > 0:
     suma += liczba % 10
     liczba //= 10

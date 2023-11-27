@@ -52,5 +52,5 @@ else:
 i = 1
 while i <= 100:
     if ((i % 10 + i // 10) % 7 == 0) and (i % 2 == 0):
-        print(f'{i}')
+        print(i)
     i += 1

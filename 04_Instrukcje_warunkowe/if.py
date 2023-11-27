@@ -41,7 +41,3 @@ if (suma_cyfr % 7 == 0) and (i % 2 == 0):
     print(f'Dobra liczba')
 else:
     print(f'Zła liczba')
-
-# Zadanie
-i = int(input("podaj liczbę naturalną"))
-if i

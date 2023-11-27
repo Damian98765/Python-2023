@@ -48,3 +48,9 @@ while n > 0:
 else:
     print('Koniec')
 
+# Wypisać wszystkie liczby od 1 do 100 które spełniają warunek z poprzedniego zadania (suma jej cyfr dzieli się przez 7 oraz liczba jest parzysta)
+i = 1
+while i <= 100:
+    if ((i % 10 + i // 10) % 7 == 0) and (i % 2 == 0):
+        print(f'{i}')
+    i += 1

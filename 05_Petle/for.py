@@ -21,3 +21,10 @@ for i in range(10):
         break
 else:
     print("Koniec")
+
+#wczytaj przy użyciu input() liczbę; wypisz sumę jej cyfr
+suma = 0
+liczba = input("podaj liczbę")
+for i in liczba:
+    suma += int (i)
+print (suma)

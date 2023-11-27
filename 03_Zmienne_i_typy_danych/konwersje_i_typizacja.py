@@ -1,3 +1,5 @@
+from builtins import float
+
 a = 3
 a = "Ala ma kota"
 
@@ -18,3 +20,4 @@ a = 3.14 + 2
 a
 
 str(a)
+float (a)

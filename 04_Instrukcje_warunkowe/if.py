@@ -24,7 +24,7 @@ else:
     print('tej liczby nie znam')
 
 # Warunki logiczne
-
+n=7
 if (n == 17) or not (n == 17):
     print("Tertium non datur")
     print("Innej opcji nie ma")
@@ -41,3 +41,7 @@ if (suma_cyfr % 7 == 0) and (i % 2 == 0):
     print(f'Dobra liczba')
 else:
     print(f'Zła liczba')
+
+# Zadanie
+i = int(input("podaj liczbę naturalną"))
+if i

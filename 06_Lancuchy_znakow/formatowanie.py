@@ -33,11 +33,9 @@ f'{"-"*10}HELLO{"-"*10}'
 f'{"HELLO":-^25s}'
 
 
-#wysokosc = int (input("Podaj wysokość choinki: "))
-wysokosc = 8
-szerokosc = 1
+wysokosc = int (input("Podaj wysokość choinki: ").strip())
 for i in range (wysokosc):
-    print (f'{"*"*szerokosc:^{wysokosc*2}}')
+    print (f'{"*"*(i*2+1):^{wysokosc*2}}')
     szerokosc += 2
 print (f'{"*":^{wysokosc*2}}')
 print (f'{"***":^{wysokosc*2}}')

@@ -22,9 +22,16 @@ for i in range(10):
 else:
     print("Koniec")
 
-#wczytaj przy użyciu input() liczbę; wypisz sumę jej cyfr
+# wczytaj przy użyciu input() liczbę; wypisz sumę jej cyfr
 suma = 0
 liczba = input("podaj liczbę")
-for i in liczba:
-    suma += int (i)
-print (suma)
+for cyfra in liczba:
+    suma += int(cyfra)
+print(suma)
+
+suma = 0
+liczba = int (input("podaj liczbę"))
+while liczba > 0:
+    suma += liczba % 10
+    liczba //= 10
+print(suma)

@@ -4,6 +4,7 @@ s + s2
 
 s1 = s
 s1 is s
+s1 is "Ala"
 
 s3 = s
 s3 += " ma kota"

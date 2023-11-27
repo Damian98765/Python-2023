@@ -1,0 +1,108 @@
+https://automatetheboringstuff.com/
+
+i=0
+
+while i<100:
+
+    i+=1
+
+    if i % 2 == 0 and (i % 10 + i // 10) % 7 == 0:
+
+        print(i)
+
+        continue
+
+else:
+
+    print('Koniec')
+
+
+
+
+
+
+liczba = input("Podaj liczbe")
+
+ 
+
+suma_liczb = 0
+
+for g in liczba:
+
+ 
+
+    suma_liczb += int(g)
+
+ 
+
+print(f"suma liczby{liczba} wynosi:{suma_liczb}")
+
+
+
+
+
+
+
+
+
+n = int(input("Podaj liczbę:"))
+
+print(f'Podałeś liczbę {n}')
+
+ 
+
+suma = 0
+
+while n > 0:
+
+    suma += n % 10
+
+    n //= 10
+
+ 
+
+print(suma)
+
+
+
+
+
+
+
+wysokosc = int (input("Podaj wysokość choinki: "))
+
+szerokosc = 1
+
+for i in range (wysokosc):
+
+    print (f'{"*"*szerokosc:^{wysokosc*2}}')
+
+    szerokosc += 2
+
+print (f'{"*":^{wysokosc*2}}')
+
+print (f'{"***":^{wysokosc*2}}')
+
+
+
+
+
+
+
+level = int(input("Poziomy:").strip())
+
+S = ' '
+
+G = '*'
+
+for i in range(level):
+
+    poziom = S * (level-i-1) + (2 * i + 1) * G
+
+    print(poziom)
+
+for i in range(2):
+
+    poziom = S * (level-i-1) + (2 * i + 1) * G
+
+    print(poziom)

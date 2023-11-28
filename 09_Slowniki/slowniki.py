@@ -81,11 +81,12 @@ for i in l:
 
 print(f"Tak się sprawy mają: {d}")
 
-dokończyć - gotowiec
-zbiblioteki
+# rozwiązanie od użytkownika - gotowiec z biblioteki
 from collections import Counter
+l = ["Ala", "ma", "kota", "Ala", "ma", "też", "psa"]
+c = Counter(l)
 
-c = Counter(lista)
+
 
 # Zadanie: dla wczytanej liczby z wejścia z zakresu 1-999 wypisać jej postać słowną, np. dla 73 wypisać siedemdziesiąt trzy
 jednosci = {0: "", 1: "jeden", 2: "dwa", 3: "trzy", 4: "cztery", 5: "pięć", 6: "sześć", 7: "siedem", 8: "osiem",9: "dziewięć"}
@@ -104,3 +105,16 @@ elif liczba > 9:
     print(nascie.get(liczba % 10))
 else:
     print(jednosci.get(liczba % 10))
+
+# zadanie od użytkownika
+jednosci = ["", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć"]
+nastki = ["", "jedenaście", "dwanaście", "trzynaście", "czternaście", "pietnaście", "szesnaście", "siedemnaście", "osiemnaście", "dziewietnaście"]
+dziesiatki =["", "dziesięć", "dwadzieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt", "sześćdziesiąt", "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt"]
+setki = ["", "sto", "dwieście", "trzysta", "czterysta", "pięćset", "sześćset", "siedemset", "osiemset", "dziewięćset"]
+
+liczba = 425
+if liczba > 10 and liczba < 20:
+    nastka = liczba % 10
+else:
+    nastka = 0
+print(setki[liczba // 100], dziesiatki[(liczba % 100) // 10], nastki[nastka % 10], jednosci[liczba % 10])

@@ -1,108 +1,48 @@
-https://automatetheboringstuff.com/
+def liczba_slownie(liczba):
 
-i=0
+    jednosci = ["", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć"]
 
-while i<100:
+    nastki = ["", "jedenaście", "dwanaście", "trzynaście", "czternaście", "piętnaście", "szesnaście", "siedemnaście",
 
-    i+=1
+              "osiemnaście", "dziewiętnaście"]
 
-    if i % 2 == 0 and (i % 10 + i // 10) % 7 == 0:
+    dziesiatki = ["", "dziesięć", "dwadzieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt", "sześćdziesiąt",
 
-        print(i)
+                  "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt"]
 
-        continue
+    setki = ["", "sto", "dwieście", "trzysta", "czterysta", "pięćset", "sześćset", "siedemset", "osiemset",
 
-else:
-
-    print('Koniec')
-
-
-
-
-
-
-liczba = input("Podaj liczbe")
+             "dziewięćset"]
 
  
 
-suma_liczb = 0
+    jednostka = jednosci[liczba % 10]
 
-for g in liczba:
+    dziesiatka = dziesiatki[(liczba // 10) % 10]
 
- 
+    nastka = nastki[liczba % 100] if 10 < liczba % 100 < 20 else ""
 
-    suma_liczb += int(g)
-
- 
-
-print(f"suma liczby{liczba} wynosi:{suma_liczb}")
-
-
-
-
-
-
-
-
-
-n = int(input("Podaj liczbę:"))
-
-print(f'Podałeś liczbę {n}')
+    setka = setki[(liczba // 100) % 10]
 
  
 
-suma = 0
+    wynik = f"{setka} {dziesiatka} {nastka} {jednostka}".strip()
 
-while n > 0:
+    return wynik.capitalize()
 
-    suma += n % 10
 
-    n //= 10
+
+
+while True:
+
+    liczba = int(input("Podaj liczbę (1-999): "))
+
+    if 1 <= liczba <= 999:
+
+        break
 
  
 
-print(suma)
+postac_slowna = liczba_slownie(liczba)
 
-
-
-
-
-
-
-wysokosc = int (input("Podaj wysokość choinki: "))
-
-szerokosc = 1
-
-for i in range (wysokosc):
-
-    print (f'{"*"*szerokosc:^{wysokosc*2}}')
-
-    szerokosc += 2
-
-print (f'{"*":^{wysokosc*2}}')
-
-print (f'{"***":^{wysokosc*2}}')
-
-
-
-
-
-
-
-level = int(input("Poziomy:").strip())
-
-S = ' '
-
-G = '*'
-
-for i in range(level):
-
-    poziom = S * (level-i-1) + (2 * i + 1) * G
-
-    print(poziom)
-
-for i in range(2):
-
-    poziom = S * (level-i-1) + (2 * i + 1) * G
-
-    print(poziom)
+print(f"{liczba} - {postac_slowna}")

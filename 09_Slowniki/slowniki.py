@@ -68,7 +68,7 @@ while True:
         break
     l.append(napis)
 
-#for i in l:
+# for i in l:
 #    if d.get(i, 0) == 0:
 #        d[i] = 1 # d |= {i: 1}
 #    else:
@@ -80,3 +80,25 @@ for i in l:
     d[i] = d.get(i, 0) + 1
 
 print(f"Tak się sprawy mają: {d}")
+
+dokończyć - gotowiec
+zbiblioteki
+from collections import Counter
+
+c = Counter(lista)
+
+# Zadanie: dla wczytanej liczby z wejścia z zakresu 1-999 wypisać jej postać słowną, np. dla 73 wypisać siedemdziesiąt trzy
+jednosci = {0: "", 1: "jeden", 2: "dwa", 3: "trzy", 4: "cztery", 5: "pięć", 6: "sześć", 7: "siedem", 8: "osiem",9: "dziewięć"}
+nascie = {0: "dziesięć", 1: "jedenaście", 2: "dwanaście", 3: "trzynaście", 4: "czternaście", 5: "pietnaście", 6: "szesnaście", 7: "siedemnaście", 8: "osiemnaście", 9: "dziewietnaście"}
+dziesiatki = {2: "dwadzieścia", 3: "trzydzieści", 4: "czterdzieści", 5: "pięćdziesiąt", 6: "sześćdziesiąt", 7: "siedemdziesiąt", 8: "osiemdziesiąt", 9: "dziewięćdziesiąt"}
+setki = {1: "sto", 2: "dwieście", 3: "trzysta", 4: "czterysta", 5: "pięćset", 6: "sześćset", 7: "siedemset", 8: "osiemset", 9: "dziewięćset"}
+# liczba = input("Podaj liczbę, a pokaże Ci jej postać słowną: ").strip()
+if liczba > 99:
+    print(setki.get(liczba // 100), end=' ')
+    liczba%=100
+if liczba > 19:
+    print(dziesiatki.get(liczba // 10), jednosci.get(liczba % 10))
+elif liczba > 9:
+    print(nascie.get(liczba % 10))
+else:
+    print(jednosci.get(liczba % 10))

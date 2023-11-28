@@ -68,12 +68,15 @@ while True:
         break
     l.append(napis)
 
-#l = ['Ala', 'ma', 'kota', 'kota']
+#for i in l:
+#    if d.get(i, 0) == 0:
+#        d[i] = 1 # d |= {i: 1}
+#    else:
+#        print (i)
+#        d[i] += 1
+
+# szybsze rozwiązanie
 for i in l:
-    if d.get(i, 0) == 0:
-        d |= {i: 1}
-    else:
-        print (i)
-        d[i] += 1
+    d[i] = d.get(i, 0) + 1
 
 print(f"Tak się sprawy mają: {d}")

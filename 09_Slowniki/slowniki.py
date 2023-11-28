@@ -92,7 +92,9 @@ jednosci = {0: "", 1: "jeden", 2: "dwa", 3: "trzy", 4: "cztery", 5: "pięć", 6:
 nascie = {0: "dziesięć", 1: "jedenaście", 2: "dwanaście", 3: "trzynaście", 4: "czternaście", 5: "pietnaście", 6: "szesnaście", 7: "siedemnaście", 8: "osiemnaście", 9: "dziewietnaście"}
 dziesiatki = {2: "dwadzieścia", 3: "trzydzieści", 4: "czterdzieści", 5: "pięćdziesiąt", 6: "sześćdziesiąt", 7: "siedemdziesiąt", 8: "osiemdziesiąt", 9: "dziewięćdziesiąt"}
 setki = {1: "sto", 2: "dwieście", 3: "trzysta", 4: "czterysta", 5: "pięćset", 6: "sześćset", 7: "siedemset", 8: "osiemset", 9: "dziewięćset"}
+tysiace = {1: "tysiąc", 2: "tysiące", 3: "tysiące", 4: "tysiące"}
 # liczba = input("Podaj liczbę, a pokaże Ci jej postać słowną: ").strip()
+# if liczba > 1000 - wykonać poniższy kod, a później encja tysiace z default "tysięcy"
 if liczba > 99:
     print(setki.get(liczba // 100), end=' ')
     liczba%=100

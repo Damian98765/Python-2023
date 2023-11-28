@@ -1,48 +1,29 @@
-def liczba_slownie(liczba):
-
-    jednosci = ["", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć"]
-
-    nastki = ["", "jedenaście", "dwanaście", "trzynaście", "czternaście", "piętnaście", "szesnaście", "siedemnaście",
-
-              "osiemnaście", "dziewiętnaście"]
-
-    dziesiatki = ["", "dziesięć", "dwadzieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt", "sześćdziesiąt",
-
-                  "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt"]
-
-    setki = ["", "sto", "dwieście", "trzysta", "czterysta", "pięćset", "sześćset", "siedemset", "osiemset",
-
-             "dziewięćset"]
-
+def _sklej(lista):
+    return " ".join([x[1] for x in lista])
+def dodaj_jednostke(lista, jednostki):
+    print(f'Lista przy dodawaniu jednostek {lista}')
+    if len(lista) == 1 and lista[0][0] == 1:
+        lista = [(1, jednostki[0])]
  
-
-    jednostka = jednosci[liczba % 10]
-
-    dziesiatka = dziesiatki[(liczba // 10) % 10]
-
-    nastka = nastki[liczba % 100] if 10 < liczba % 100 < 20 else ""
-
-    setka = setki[(liczba // 100) % 10]
-
+    elif lista[-1][0] >= 2 and lista[-1][0] <= 4:
+        lista.append((0, jednostki[1]))
+    else:
+        lista.append((0, jednostki[2]))
+    return lista
+def slownie_do999(n, jednostki=["", "", ""]):
+    lista = _slownie_do999(n)
+    lista = dodaj_jednostke(lista, jednostki)
+    return _sklej(lista)
+def slownie(n):
+    jednosci = n % 1000
+    tysiace = (n // 1000) % 1000
+    miliony = n // 1_000_000 % 1000
+    miliardy = n // 1_000_000_000 % 1000
  
-
-    wynik = f"{setka} {dziesiatka} {nastka} {jednostka}".strip()
-
-    return wynik.capitalize()
-
-
-
-
-while True:
-
-    liczba = int(input("Podaj liczbę (1-999): "))
-
-    if 1 <= liczba <= 999:
-
-        break
-
+    lista = [slownie_do999(miliardy, jednostki=["miliard", "miliardy", "miliardów"]),
+        slownie_do999(miliony, jednostki=["milion", "miliony", "milionów"]),
+        slownie_do999(tysiace, jednostki=["tysiąc", "tysiące", "tysięcy"]),
+             slownie_do999(jednosci)]
  
-
-postac_slowna = liczba_slownie(liczba)
-
-print(f"{liczba} - {postac_slowna}")
+ 
+    return " ".join(lista)

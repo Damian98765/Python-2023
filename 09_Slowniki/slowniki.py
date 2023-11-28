@@ -94,8 +94,9 @@ nascie = {0: "dziesięć", 1: "jedenaście", 2: "dwanaście", 3: "trzynaście", 
 dziesiatki = {2: "dwadzieścia", 3: "trzydzieści", 4: "czterdzieści", 5: "pięćdziesiąt", 6: "sześćdziesiąt", 7: "siedemdziesiąt", 8: "osiemdziesiąt", 9: "dziewięćdziesiąt"}
 setki = {1: "sto", 2: "dwieście", 3: "trzysta", 4: "czterysta", 5: "pięćset", 6: "sześćset", 7: "siedemset", 8: "osiemset", 9: "dziewięćset"}
 tysiace = {1: "tysiąc", 2: "tysiące", 3: "tysiące", 4: "tysiące"}
-# liczba = input("Podaj liczbę, a pokaże Ci jej postać słowną: ").strip()
+liczba = input("Podaj liczbę, a pokaże Ci jej postać słowną: ").strip()
 # if liczba > 1000 - wykonać poniższy kod, a później encja tysiace z default "tysięcy"
+# liczba = 100
 if liczba > 99:
     print(setki.get(liczba // 100), end=' ')
     liczba%=100
@@ -106,13 +107,23 @@ elif liczba > 9:
 else:
     print(jednosci.get(liczba % 10))
 
-# zadanie od użytkownika
+# krótsza wersja powyższego
+#liczba = 16
+print(setki.get(liczba // 100, ""), end=' ')
+if liczba%100 > 9 and liczba%100 < 20:
+    print(nascie.get(liczba % 10))
+else:
+    print(dziesiatki.get(liczba // 10, ""), jednosci.get(liczba % 10))
+
+
+
+# zadanie od użytkownika - przepisuję sam, ale jeszcze nie działa poprawnie
 jednosci = ["", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć"]
 nastki = ["", "jedenaście", "dwanaście", "trzynaście", "czternaście", "pietnaście", "szesnaście", "siedemnaście", "osiemnaście", "dziewietnaście"]
 dziesiatki =["", "dziesięć", "dwadzieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt", "sześćdziesiąt", "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt"]
 setki = ["", "sto", "dwieście", "trzysta", "czterysta", "pięćset", "sześćset", "siedemset", "osiemset", "dziewięćset"]
 
-liczba = 425
+liczba = 111
 if liczba > 10 and liczba < 20:
     nastka = liczba % 10
 else:

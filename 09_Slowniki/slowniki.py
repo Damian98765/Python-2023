@@ -50,11 +50,30 @@ else:
     print('tej liczby nie znam')
 
 s2 = {'d': 4}
-s|s2
+s | s2
 
-s|={'e':5}
+s |= {'e': 5}
 s
 
 'a' in s
 
 s = {1: "a", 2: 'b', "ala": [3, 4]}
+
+# Zadanie : dla listy napisów pobranej w pętli z wejścia wypisać słownik ilości wystąpień napisów, np. dla ['Ala', 'ma' 'kota', 'kota'] wypisać {'Ala': 1, 'ma': 1, ;'kota': 2}
+l = []
+d = {}
+while True:
+    napis = input("Podaj napis, a dodam go do listy: ").strip()
+    if napis == "":
+        break
+    l.append(napis)
+
+#l = ['Ala', 'ma', 'kota', 'kota']
+for i in l:
+    if d.get(i, 0) == 0:
+        d |= {i: 1}
+    else:
+        print (i)
+        d[i] += 1
+
+print(f"Tak się sprawy mają: {d}")

@@ -23,4 +23,7 @@ for row in result:
 for row in result:
     print('\t|\t'.join( (str(row.id),  str(row.name) , str(row.price))))
 
-    
+
+new_item = FoodItem (name="makaron", price=22)
+session.add (new_item)
+session.commit()

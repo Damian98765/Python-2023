@@ -11,7 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLALCHEMY_ECHO'] = True
+# app.config['SQLALCHEMY_ECHO'] = True
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://my_user:secret@127.0.0.1/my_database'
 db = SQLAlchemy(app)
 
@@ -33,17 +33,18 @@ class Note(db.Model):
     def __repr__(self):
         return f'Notatka "{self.title}" rozpoczynająca się od "{self.content[:20]}"'
 
+    tags = db.relationship("Tag",
+                    secondary='notetag',
+                    uselist=True,
+                    backref='note',
+                    lazy='select')
+
 class NoteTag(db.Model):
     __tablename__ = "notetag"
     id = db.Column('id', db.Integer, primary_key=True)
     tag_id = db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'))
     note_id = db.Column('note_id', db.Integer, db.ForeignKey('note.id'))
 
-    tags = db.relationship("Tag",
-                    secondary='notetag',
-                    uselist=True,
-                    backref='notes',
-                    lazy='select')
 
 
 def get_tags(session):
@@ -171,16 +172,16 @@ def removeNote():
     print("2")
     return render_template('Zadanie3_form.html', data=get_tags(db.session), notes=get_notes(db.session), tytul=tytul)
 
-@app.route('/join')
-def join():
-    args = request.args
-    joinTables (args["noteId"], args["tagId"], db.session)
-    return render_template('Zadanie3_form.html', data=get_tags(db.session), notes=get_notes(db.session), tytul=tytul)
+# @app.route('/join')
+# def join():
+#     args = request.args
+#     joinTables (args["noteId"], args["tagId"], db.session)
+#     return render_template('Zadanie3_form.html', data=get_tags(db.session), notes=get_notes(db.session), tytul=tytul)
 
-def joinTables (note_id, tag_id, session)
-    #połaczyć notatkę z tagiem
-    note = session.query(Note).filter_by(id=note_id).one()
-    tag = session.query(Tag).filter_by(id=tag_id).one()
-    note.tags.append(tag)
-    session.add(note)
-    session.commit()
+# def joinTables (note_id, tag_id, session)
+#     #połaczyć notatkę z tagiem
+#     note = session.query(Note).filter_by(id=note_id).one()
+#     tag = session.query(Tag).filter_by(id=tag_id).one()
+#     note.tags.append(tag)
+#     session.add(note)
+#     session.commit()

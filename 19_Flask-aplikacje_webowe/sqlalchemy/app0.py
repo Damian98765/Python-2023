@@ -1,4 +1,4 @@
-# Przy pierwszym uruchomieniu:  flask --app app shell
+# Przy pierwszym uruchomieniu:  flask --app app0 shell
 # A następnie:
 # >>> db.create_all()
 # >>> exit()
@@ -7,6 +7,7 @@
 import sqlalchemy
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 

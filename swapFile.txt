@@ -12,3 +12,6 @@ https://alembic.sqlalchemy.org/en/latest/ # zarządzanie zmianami w strukturze b
 https://docs.python.org/3/library/email.examples.html # wiadomości e-mail
 
 michal.korzycki@gmail.com
+
+Zoom:   521 479 8139 - 1UaY01
+
